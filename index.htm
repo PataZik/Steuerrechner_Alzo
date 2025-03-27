@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortgeschrittener Steuerrechner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white">
+    <div class="container mt-5">
+        <div class="card bg-dark text-white border-danger shadow-lg p-4">
+            <h2 class="text-center mb-4 text-danger">Fortgeschrittener Steuerrechner</h2>
+            <div class="mb-3">
+                <label for="einkommen" class="form-label text-danger">Jahreseinkommen (€):</label>
+                <input type="number" id="einkommen" class="form-control bg-secondary text-white border-danger" placeholder="Geben Sie Ihr Einkommen ein">
+            </div>
+            <div class="mb-3">
+                <label for="kinder" class="form-label text-danger">Anzahl der Kinder:</label>
+                <input type="number" id="kinder" class="form-control bg-secondary text-white border-danger" placeholder="Anzahl der Kinder" min="0">
+            </div>
+            <div class="mb-3">
+                <label for="ausgaben" class="form-label text-danger">Steuerlich absetzbare Ausgaben (€):</label>
+                <input type="number" id="ausgaben" class="form-control bg-secondary text-white border-danger" placeholder="Z. B. Weiterbildung, Spenden">
+            </div>
+            <button class="btn btn-danger w-100" onclick="berechneSteuer()">Berechnen</button>
+            <div class="mt-3 alert alert-danger text-black" id="ergebnis">Ihre Steuerlast wird hier angezeigt.</div>
+        </div>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="background-animation"></div>
+        <div class="loading-box">
+            <div class='spinner-border text-danger' role='status'></div>
+            <p class='mt-2' id="berechnungsText">Sehr komplexe Berechnungen werden gemacht...</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
